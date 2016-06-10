@@ -1,0 +1,20 @@
+{
+  "name": "material_react_native",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "@remobile/react-native-splashscreen": "^1.0.3",
+    "alt": "^0.18.1",
+    "react": "15.0.2",
+    "react-native": "0.26.3",
+    "react-native-action-button": "^1.0.8",
+    "react-native-drawer": "^2.2.3",
+    "react-native-material-design": "^0.3.6",
+    "react-native-nav": "^1.1.4",
+    "react-native-slider": "^0.4.0",
+    "react-native-vector-icons": "^2.0.3"
+  }
+}
