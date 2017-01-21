@@ -35,7 +35,7 @@ import tweens from './tweens';
 
 var counter = 0
 class material_react_native extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -48,8 +48,7 @@ class material_react_native extends Component {
       panOpenMask: .1,
       panCloseMask: .9,
       relativeDrag: false,
-      panStartCompensation: true,
-      openDrawerThreshold: .25,
+      panThreshold: .25,
       tweenHandlerOn: false,
       tweenDuration: 350,
       tweenEasing: 'linear',
@@ -59,9 +58,9 @@ class material_react_native extends Component {
       acceptTap: false,
       acceptPan: true,
       rightSide: false
-    }; 
+    };
   }
-  
+
   setDrawer = (drawer) => {
     this.setState({
       drawer
@@ -70,8 +69,8 @@ class material_react_native extends Component {
 
   setNavigator = (navigator) => {
 		this.setState({
-			navigator: new Navigate(navigator)      
-		});    
+			navigator: new Navigate(navigator)
+		});
 	};
 
   tweenHandler = (ratio) => {
@@ -88,8 +87,8 @@ class material_react_native extends Component {
   setStateFrag = (frag) => {
     this.setState(frag)
   };
-  
-  render() {    
+
+  render() {
     var navView = <Navigation navigator={this.state.navigator} closeDrawer={() => {this.state.drawer.close()}} />
 
     return (
@@ -102,8 +101,7 @@ class material_react_native extends Component {
         panOpenMask={this.state.panOpenMask}
         panCloseMask={this.state.panCloseMask}
         relativeDrag={this.state.relativeDrag}
-        panStartCompensation={this.state.panStartCompensation}
-        openDrawerThreshold={this.state.openDrawerThreshold}
+        panThreshold={this.state.panThreshold}
         content={navView}
         styles={drawerStyles}
         disabled={this.state.disabled}
@@ -115,7 +113,7 @@ class material_react_native extends Component {
         acceptPan={this.state.acceptPan}
         changeVal={this.state.changeVal}
         negotiatePan={false}
-        side={this.state.rightSide ? 'right' : 'left'}        
+        side={this.state.rightSide ? 'right' : 'left'}
         >
         <Navigator
           openDrawer={() => {this.state.drawer.open()}}
@@ -132,9 +130,9 @@ class material_react_native extends Component {
                 return (
                     <View
                         style={styles.scene}
-                        showsVerticalScrollIndicator={false}>                      
-                      <route.component navigator={this.state.navigator} title={route.title} path={route.path} {...route.props}                        
-                        
+                        showsVerticalScrollIndicator={false}>
+                      <route.component navigator={this.state.navigator} title={route.title} path={route.path} {...route.props}
+
                         />
                     </View>
                 );
